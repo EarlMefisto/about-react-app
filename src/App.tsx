@@ -1,5 +1,5 @@
 import "./App.css";
-import { Rating } from "./components/Rating";
+import { Rating } from "./components/Rating/Rating";
 import { StyleBoxArticle1 } from "./components/Btn.styled";
 import { StyleBtnArticle1 } from "./components/Btn.styled";
 import { StyleBoxArticle2 } from "./components/Btn.styled";
@@ -7,8 +7,10 @@ import { StyleBtnArticle2 } from "./components/Btn.styled";
 import { StyleLinkAccordion } from "./components/Btn.styled";
 import Menu from "./components/Menu.styled";
 import { theme } from "./GlobalStyles/Theme.styles";
-import { Accordion } from "./components/Accordion";
+import { Accordion } from "./components/Accordion/Accordion";
 import { OnOff } from "./components/onOff/OnOff";
+import { UncontrolledAccordion } from "./components/Accordion/UncontrolledAccordion";
+import { UncontrolledRating } from "./components/Rating/UncontrolledRating";
 
 type PageTitlePropsType = {
   title: string;
@@ -17,7 +19,7 @@ type PageTitlePropsType = {
 function App() {
   // console.log("App rendering");
   return (
-    <div>
+    <div className="App">
       <PageTitle title={"This is APP component"} />
       <Menu>
         <b>Menu</b>
@@ -49,10 +51,13 @@ function App() {
         </StyleBtnArticle1>
       </StyleBoxArticle1>
       <Rating value={3} />
+      <UncontrolledRating/>
       <StyleLinkAccordion>
+        <OnOff />
         <Accordion titleValue="Menu" unwrap={true} />
         <Accordion titleValue="Users" unwrap={false} />
       </StyleLinkAccordion>
+      <UncontrolledAccordion titleValue="Menu" />
       <StyleBoxArticle2>
         <StyleBtnArticle2>Article 5</StyleBtnArticle2>
       </StyleBoxArticle2>
@@ -62,7 +67,6 @@ function App() {
       <Rating value={3} />
       <Rating value={4} />
       <Rating value={5} />
-      <OnOff />
     </div>
   );
 }
