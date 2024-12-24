@@ -1,5 +1,5 @@
 import "./App.css";
-import { Rating } from "./components/Rating/Rating";
+import { Rating, RatingValueType } from "./components/Rating/Rating";
 import { StyleBoxArticle1 } from "./components/Btn.styled";
 import { StyleBtnArticle1 } from "./components/Btn.styled";
 import { StyleBoxArticle2 } from "./components/Btn.styled";
@@ -8,9 +8,12 @@ import { StyleLinkAccordion } from "./components/Btn.styled";
 import Menu from "./components/Menu.styled";
 import { theme } from "./GlobalStyles/Theme.styles";
 import { Accordion } from "./components/Accordion/Accordion";
-import { OnOff } from "./components/onOff/OnOff";
 import { UncontrolledAccordion } from "./components/Accordion/UncontrolledAccordion";
 import { UncontrolledRating } from "./components/Rating/UncontrolledRating";
+import { useState } from "react";
+
+import { UncontrolledOnOff } from "./components/onOff/UncontrolledOnOff";
+import { OnOff } from "./components/onOff/OnOff";
 
 type PageTitlePropsType = {
   title: string;
@@ -18,6 +21,10 @@ type PageTitlePropsType = {
 
 function App() {
   // console.log("App rendering");
+  const [ratingValue, setRatingValue] = useState<RatingValueType>(0);
+  const [accordionUnwrap, setAccordionUnwrap] = useState<boolean>(false);
+  const [switchOn, setSwitchOn] = useState<boolean>(false);
+
   return (
     <div className="App">
       <PageTitle title={"This is APP component"} />
@@ -35,6 +42,7 @@ function App() {
           </li>
         </ul>
       </Menu>
+
       <PageTitle title={"My friends"} />
       <StyleBoxArticle1>
         <StyleBtnArticle1 color={"red"} fontSize={"20px"}>
@@ -50,23 +58,28 @@ function App() {
           Article 4
         </StyleBtnArticle1>
       </StyleBoxArticle1>
-      <Rating value={3} />
-      <UncontrolledRating/>
+      <UncontrolledRating />
       <StyleLinkAccordion>
-        <OnOff />
-        <Accordion titleValue="Menu" unwrap={true} />
-        <Accordion titleValue="Users" unwrap={false} />
+        <Accordion
+          titleValue="Menu"
+          unwrap={accordionUnwrap}
+          onChange={() => {
+            setAccordionUnwrap(!accordionUnwrap);
+          }}
+        />
       </StyleLinkAccordion>
       <UncontrolledAccordion titleValue="Menu" />
+      <OnOff on={switchOn} onChange={setSwitchOn} />
+      <UncontrolledOnOff onChange={setSwitchOn}/> {switchOn.toString()}
       <StyleBoxArticle2>
         <StyleBtnArticle2>Article 5</StyleBtnArticle2>
       </StyleBoxArticle2>
-      <Rating value={0} />
-      <Rating value={1} />
-      <Rating value={2} />
-      <Rating value={3} />
-      <Rating value={4} />
-      <Rating value={5} />
+      <Rating onClick={setRatingValue} value={ratingValue} />
+      <Rating onClick={setRatingValue} value={ratingValue} />
+      <Rating onClick={setRatingValue} value={ratingValue} />
+      <Rating onClick={setRatingValue} value={ratingValue} />
+      <Rating onClick={setRatingValue} value={ratingValue} />
+      <Rating onClick={setRatingValue} value={ratingValue} />
     </div>
   );
 }

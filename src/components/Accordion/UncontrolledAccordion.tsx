@@ -2,11 +2,11 @@ import { useState } from "react";
 
 type AccordionPropsType = {
   titleValue: string;
-  // unwrap: boolean;
 };
 
 type AccordionTitlePropsType = {
   title: string;
+  onClick: () => void
 };
 
 type AccordionBodyPropsType = {
@@ -20,8 +20,12 @@ export function UncontrolledAccordion(props: AccordionPropsType) {
 
   return (
     <div>
-      <AccordionTitle title={props.titleValue} />
-      <button onClick={() => {setUnwrap(!unwrap)}}>Toggle</button>
+      <AccordionTitle
+        title={props.titleValue}
+        onClick={() => {
+          setUnwrap(!unwrap);
+        }}
+      />
       {!unwrap && <AccordionBody />}
     </div>
   );
@@ -29,7 +33,7 @@ export function UncontrolledAccordion(props: AccordionPropsType) {
 
 function AccordionTitle(props: AccordionTitlePropsType) {
   // console.log("AccordionTitle rendering");
-  return <h3>--- {props.title} ---</h3>;
+  return <h3 onClick={() => {props.onClick()}}>--- {props.title} ---</h3>;
 }
 
 function AccordionBody(props: AccordionBodyPropsType) {
