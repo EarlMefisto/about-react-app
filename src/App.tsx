@@ -11,7 +11,6 @@ import { Accordion } from "./components/Accordion/Accordion";
 import { UncontrolledAccordion } from "./components/Accordion/UncontrolledAccordion";
 import { UncontrolledRating } from "./components/Rating/UncontrolledRating";
 import { useState } from "react";
-
 import { UncontrolledOnOff } from "./components/onOff/UncontrolledOnOff";
 import { OnOff } from "./components/onOff/OnOff";
 
@@ -42,7 +41,6 @@ function App() {
           </li>
         </ul>
       </Menu>
-
       <PageTitle title={"My friends"} />
       <StyleBoxArticle1>
         <StyleBtnArticle1 color={"red"} fontSize={"20px"}>
@@ -58,7 +56,6 @@ function App() {
           Article 4
         </StyleBtnArticle1>
       </StyleBoxArticle1>
-      <UncontrolledRating />
       <StyleLinkAccordion>
         <Accordion
           titleValue="Menu"
@@ -70,7 +67,7 @@ function App() {
       </StyleLinkAccordion>
       <UncontrolledAccordion titleValue="Menu" />
       <OnOff on={switchOn} onChange={setSwitchOn} />
-      <UncontrolledOnOff onChange={setSwitchOn}/> {switchOn.toString()}
+      <UncontrolledOnOff onChange={setSwitchOn} /> {switchOn.toString()}
       <StyleBoxArticle2>
         <StyleBtnArticle2>Article 5</StyleBtnArticle2>
       </StyleBoxArticle2>
@@ -80,6 +77,7 @@ function App() {
       <Rating onClick={setRatingValue} value={ratingValue} />
       <Rating onClick={setRatingValue} value={ratingValue} />
       <Rating onClick={setRatingValue} value={ratingValue} />
+      <UncontrolledRating />
     </div>
   );
 }
