@@ -12,5 +12,5 @@ export const UnwrapAccordion = () => {
   return <UncontrolledAccordion titleValue="Menu" />;
 };
 export const OpenedAccordion = () => {
-  return <UncontrolledAccordion titleValue="Menu" />;
+  return <UncontrolledAccordion titleValue="Users" />;
 };

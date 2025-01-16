@@ -12,5 +12,5 @@ export default meta;
 const actionCollback = action("on or off clicked");
 
 export const UncontrolledOnOffMode = () => (
-  <UncontrolledOnOff onChange={actionCollback} />
+  <UncontrolledOnOff defaultMode={true} onChange={actionCollback} />
 );

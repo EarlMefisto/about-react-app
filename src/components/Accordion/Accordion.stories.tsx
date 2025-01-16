@@ -27,7 +27,7 @@ export const UnwrapAccordion = () => {
   return <Accordion titleValue="Menu" unwrap={true} onChange={onChangeHandler} />;
 };
 export const OpenedAccordion = () => {
-  return <Accordion titleValue="Menu" unwrap={false} onChange={() => {}} />;
+  return <Accordion titleValue="Users" unwrap={false} onChange={() => {}} />;
 };
 
 export const IsAccordion = () => {

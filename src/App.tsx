@@ -13,6 +13,8 @@ import { UncontrolledRating } from "./components/Rating/UncontrolledRating";
 import { useState } from "react";
 import { UncontrolledOnOff } from "./components/onOff/UncontrolledOnOff";
 import { OnOff } from "./components/onOff/OnOff";
+import { UncontrolledInput } from "./components/Input/UncontrolledInput";
+import { Input } from "./components/Input/Input";
 
 type PageTitlePropsType = {
   title: string;
@@ -77,7 +79,9 @@ function App() {
       <Rating onClick={setRatingValue} value={ratingValue} />
       <Rating onClick={setRatingValue} value={ratingValue} />
       <Rating onClick={setRatingValue} value={ratingValue} />
-      <UncontrolledRating />
+      <UncontrolledRating onChange={setRatingValue} />
+      <Input value="Uno"/>
+      <UncontrolledInput />
     </div>
   );
 }

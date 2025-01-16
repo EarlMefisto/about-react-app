@@ -1,7 +1,9 @@
 import { useState } from "react";
+import { RatingValueType } from "../Rating/Rating";
 
 type OnOffPropsType = {
   onChange: (on: boolean) => void;
+  defaultMode?: boolean;
 };
 
 export const UncontrolledOnOff = (props: OnOffPropsType) => {
