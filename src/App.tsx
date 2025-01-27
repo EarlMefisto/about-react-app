@@ -15,6 +15,7 @@ import { UncontrolledOnOff } from "./components/onOff/UncontrolledOnOff";
 import { OnOff } from "./components/onOff/OnOff";
 import { UncontrolledInput } from "./components/Input/UncontrolledInput";
 import { Input } from "./components/Input/Input";
+import { Select } from "./components/Select/Select";
 
 type PageTitlePropsType = {
   title: string;
@@ -59,13 +60,13 @@ function App() {
         </StyleBtnArticle1>
       </StyleBoxArticle1>
       <StyleLinkAccordion>
-        <Accordion
+        {/* <Accordion
           titleValue="Menu"
           unwrap={accordionUnwrap}
           onChange={() => {
             setAccordionUnwrap(!accordionUnwrap);
           }}
-        />
+        /> */}
       </StyleLinkAccordion>
       <UncontrolledAccordion titleValue="Menu" />
       <OnOff on={switchOn} onChange={setSwitchOn} />
