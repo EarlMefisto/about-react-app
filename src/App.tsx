@@ -16,6 +16,7 @@ import { OnOff } from "./components/onOff/OnOff";
 import { UncontrolledInput } from "./components/Input/UncontrolledInput";
 import { Input } from "./components/Input/Input";
 import { Select } from "./components/Select/Select";
+import { NewComponent } from "./components/NewComponent";
 
 type PageTitlePropsType = {
   title: string;
@@ -60,13 +61,15 @@ function App() {
         </StyleBtnArticle1>
       </StyleBoxArticle1>
       <StyleLinkAccordion>
-        {/* <Accordion
+        <Accordion
           titleValue="Menu"
           unwrap={accordionUnwrap}
           onChange={() => {
             setAccordionUnwrap(!accordionUnwrap);
           }}
-        /> */}
+          items={[]}
+          onClick={() => {}}
+        />
       </StyleLinkAccordion>
       <UncontrolledAccordion titleValue="Menu" />
       <OnOff on={switchOn} onChange={setSwitchOn} />
@@ -75,14 +78,10 @@ function App() {
         <StyleBtnArticle2>Article 5</StyleBtnArticle2>
       </StyleBoxArticle2>
       <Rating onClick={setRatingValue} value={ratingValue} />
-      <Rating onClick={setRatingValue} value={ratingValue} />
-      <Rating onClick={setRatingValue} value={ratingValue} />
-      <Rating onClick={setRatingValue} value={ratingValue} />
-      <Rating onClick={setRatingValue} value={ratingValue} />
-      <Rating onClick={setRatingValue} value={ratingValue} />
       <UncontrolledRating onChange={setRatingValue} />
-      <Input value="Uno"/>
+      <Input value="Uno" />
       <UncontrolledInput />
+      <NewComponent/>
     </div>
   );
 }
